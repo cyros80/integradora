@@ -1,11 +1,12 @@
+/////////Titulo////
 <ion-header>
   <ion-toolbar>
     <app-header> <ion-title class="ion-text-center">Personajes</ion-title></app-header>
   </ion-toolbar>
 </ion-header>
-
+/////////Contenido////
 <ion-content id="contenido">
-  
+  /////////Segment////
   <ion-segment (ionChange)="segmentChanged($event)" 	swipe-gesture="true" [value]="valueSelected" color="tertiary" >
 
     <ion-segment-button value="personajes">
@@ -25,7 +26,7 @@
 
   </ion-segment>
   
-  
+  /////////Vista Personajes////
   <div *ngIf="valueSelected == 'personajes'">
     <ion-grid [fixed]="true">
       <h1 class="ion-text-center">Personajes</h1>
@@ -44,7 +45,7 @@
       </ion-row>
     </ion-grid>
   </div>
-  
+  /////////Vista Enemigos////
   <div *ngIf="valueSelected == 'enemigos'">
     <ion-grid [fixed]="true">
       <h1 class="ion-text-center">Enemigos</h1>

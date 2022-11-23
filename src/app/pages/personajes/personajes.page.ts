@@ -15,11 +15,11 @@ import { DetallePersonajesComponent } from 'src/app/componentes/detalle-personaj
 export class PersonajesPage implements OnInit {
 
   valueSelected:String = 'personajes';
-
+//////Obtencion de los datos del Interface
   personaje: Datos []=[];
   personajes: Datos []=[];
   constructor(private servicioPersonajes:PersonajesService,private mdlctrl:ModalController) { }
-
+  ///// Consulta ID Para ver el Detalle de los Enemigos
   async verDetalle(id:number){
     const modal=await this.mdlctrl.create({
       component:DetalleComponent,
@@ -27,7 +27,7 @@ export class PersonajesPage implements OnInit {
     });
     modal.present();
   }
-
+  ///// Consulta ID Para ver el Detalle de los Personajes
   async verDetallePersonaje(id:number){
     const modal=await this.mdlctrl.create({
       component:DetallePersonajesComponent,
@@ -37,12 +37,13 @@ export class PersonajesPage implements OnInit {
   }
 
   ngOnInit() {
+    ////Consulta de Datos para los Personajes
     this.servicioPersonajes.getdatos()
     .subscribe((resp:Personas)=>{
       console.log('Personajes',resp)
       this.personaje=resp.datos
     })
-
+    ////Consulta de Datos para los enemigos
     this.servicioPersonajes.getdatos()
     .subscribe((resp:Personas)=>{
       console.log('Enemigos',resp)
@@ -50,7 +51,7 @@ export class PersonajesPage implements OnInit {
     })
 
   }
-
+  ///// Evento para el Segment
   segmentChanged(event: CustomEvent){
     this.valueSelected = event.detail.value;
     console.log(this.valueSelected);

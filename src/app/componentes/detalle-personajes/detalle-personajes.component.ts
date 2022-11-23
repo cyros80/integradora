@@ -15,12 +15,13 @@ export class DetallePersonajesComponent implements OnInit {
   personajes: Datos2={};
 
   constructor(private servicio:PersonajesService, private mdlCtrl:ModalController) { }
-
+ ////Funcion para regresar a la pantalla anterior
   regresar(){
     this.mdlCtrl.dismiss();
   }
 
   ngOnInit() {
+    ////Obtener datos para un ID especifico de los personajes
     this.servicio.getDetallesPersonajes(this.id).subscribe((resp:Datos2) => {
       console.log('InformacioDB', resp) 
       this.personajes = resp;

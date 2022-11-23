@@ -15,12 +15,13 @@ export class DetalleComponent implements OnInit {
   enemigos: Datos2={};
 
   constructor(private servicio:PersonajesService, private mdlCtrl:ModalController) { }
-
+   ////Funcion para regresar a la pantalla anterior
   regresar(){
     this.mdlCtrl.dismiss();
   }
 
   ngOnInit() {
+    ////Obtener datos para un ID especifico de los enemigos
     this.servicio.getDetallesEnemigos(this.id).subscribe((resp:Datos2) => {
       console.log('InformacioDB', resp) 
       this.enemigos = resp;
