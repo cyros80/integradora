@@ -1,0 +1,35 @@
+/* iOS places the subtitle above the title */
+ion-card-header.ios {
+    display: flex;
+    flex-flow: column-reverse;
+  }
+
+ion-title{
+  font-family: monospace;
+  color: chocolate;
+  
+}  
+
+
+
+ion-card-title{
+  font-size: larger;
+  color: black;
+
+}
+
+ion-card-subtitle{
+  color: darkred;
+}
+
+ion-card-content{
+  font-style: oblique;
+  font-weight: 200;
+  color: cadetblue;
+}
+
+
+
+#card{
+  background-color: antiquewhite;
+}

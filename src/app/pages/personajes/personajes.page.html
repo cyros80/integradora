@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <app-header> <ion-title class="ion-text-center">Personajes</ion-title></app-header>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="contenido">
+  
+  <ion-segment (ionChange)="segmentChanged($event)" 	swipe-gesture="true" [value]="valueSelected" color="tertiary" >
+
+    <ion-segment-button value="personajes">
+      <ion-icon name="happy"></ion-icon>
+      <ion-label>Personajes</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="enemigos">
+      <ion-icon name="skull"></ion-icon>
+      
+      <ion-label>Enemigos</ion-label>
+    </ion-segment-button>
+
+    <div *ngIf="valueSelected == personajes">
+      <h3>Hola</h3>
+    </div>
+
+  </ion-segment>
+  
+  
+  <div *ngIf="valueSelected == 'personajes'">
+    <ion-grid [fixed]="true">
+      <h1 class="ion-text-center">Personajes</h1>
+      <ion-row *ngFor="let persona of personaje">
+        <ion-col (click)="verDetallePersonaje(persona.id)">
+          <ion-item >
+              <ion-thumbnail slot="start">
+                <img [src]="persona.imagen"  />
+              </ion-thumbnail>
+              <ion-label>
+                  {{persona.nombre}}
+              </ion-label>
+              <br>
+            </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  
+  <div *ngIf="valueSelected == 'enemigos'">
+    <ion-grid [fixed]="true">
+      <h1 class="ion-text-center">Enemigos</h1>
+      <ion-row *ngFor="let personajes2 of personajes">
+        <ion-col (click)="verDetalle(personajes2.id)">
+          <ion-item >
+              <ion-thumbnail slot="start">
+                <img [src]="personajes2.imagen"  />
+              </ion-thumbnail>
+              <ion-label>
+                  {{personajes2.nombre}}
+              </ion-label>
+              <br>
+            </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</ion-content>
+
+

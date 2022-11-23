@@ -8,8 +8,24 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'inicio',
     pathMatch: 'full'
+  },
+  {
+    path: 'inicio',
+    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
+  },
+  {
+    path: 'secretos',
+    loadChildren: () => import('./pages/secretos/secretos.module').then( m => m.SecretosPageModule)
+  },
+  {
+    path: 'enemigos',
+    loadChildren: () => import('./pages/enemigos/enemigos.module').then( m => m.EnemigosPageModule)
+  },
+  {
+    path: 'personajes',
+    loadChildren: () => import('./pages/personajes/personajes.module').then( m => m.PersonajesPageModule)
   },
 ];
 

@@ -1,0 +1,17 @@
+/* iOS places the subtitle above the title */
+ion-card-header.ios {
+    display: flex;
+    flex-flow: column-reverse;
+  }
+
+  ion-segment {
+    --background: #54dc98;
+  }
+
+  ion-title{
+    font-family: cursive;
+  }
+
+  ion-content{
+    background-color: antiquewhite;
+  }
