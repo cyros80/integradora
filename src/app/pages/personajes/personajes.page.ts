@@ -2,9 +2,12 @@ import { Component, OnInit } from '@angular/core';
 
 import { PersonajesService } from '../../services/personajes.service';
 import { Personas, Datos } from '../../interfaces/interfaces';
-import { ModalController } from '@ionic/angular';
+import { AlertController, ModalController } from '@ionic/angular';
 import { DetalleComponent } from '../../componentes/detalle/detalle.component';
 import { DetallePersonajesComponent } from 'src/app/componentes/detalle-personajes/detalle-personajes.component';
+import { async } from '@angular/core/testing';
+import { HttpResponse } from '@capacitor/core';
+import { Style } from '@capacitor/status-bar';
 
 
 @Component({
@@ -18,7 +21,7 @@ export class PersonajesPage implements OnInit {
 //////Obtencion de los datos del Interface
   personaje: Datos []=[];
   personajes: Datos []=[];
-  constructor(private servicioPersonajes:PersonajesService,private mdlctrl:ModalController) { }
+  constructor(private servicioPersonajes:PersonajesService,private mdlctrl:ModalController,private alerController: AlertController) { }
   ///// Consulta ID Para ver el Detalle de los Enemigos
   async verDetalle(id:number){
     const modal=await this.mdlctrl.create({
@@ -34,7 +37,21 @@ export class PersonajesPage implements OnInit {
       componentProps:{id}
     });
     modal.present();
+
+    
   }
+  //mensaje de error de conexion
+  async presentAlert() {
+    const alert = await this.alerController.create({
+      header : 'Alerta',
+      subHeader: 'No se pudo obtener los datos',
+      message: 'Error al obtener los datos verifica tu conexion. Si el problema perdura consulta al desarrollador.',
+      buttons: ['OK'],
+    });
+
+    await alert.present();
+  } 
+   
 
   ngOnInit() {
     ////Consulta de Datos para los Personajes
@@ -42,7 +59,11 @@ export class PersonajesPage implements OnInit {
     .subscribe((resp:Personas)=>{
       console.log('Personajes',resp)
       this.personaje=resp.datos
-    })
+    },(errorR: HttpResponse)=>{
+      if (errorR.status===0) {
+        this.presentAlert();
+      }
+  })
     ////Consulta de Datos para los enemigos
     this.servicioPersonajes.getdatos()
     .subscribe((resp:Personas)=>{
@@ -52,7 +73,8 @@ export class PersonajesPage implements OnInit {
 
   }
   ///// Evento para el Segment
-  segmentChanged(event: CustomEvent){
+  segmentChanged(event){
+    
     this.valueSelected = event.detail.value;
     console.log(this.valueSelected);
 

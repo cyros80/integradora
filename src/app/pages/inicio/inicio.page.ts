@@ -4,6 +4,7 @@ import { ModalController } from '@ionic/angular';
 
 import { DetalleComponent } from '../../componentes/detalle/detalle.component';
 import { PersonajesService } from 'src/app/services/personajes.service';
+import { DetalleHistoriaComponent } from '../../componentes/detalle-historia/detalle-historia.component';
 
 
 
@@ -19,11 +20,11 @@ export class InicioPage implements OnInit {
 
   constructor(private servicioPlanetas:PersonajesService,
     private modalCrtl:ModalController) { }
-
-    async verDetalle(name:string){
+//Detalle para ver la historia
+    async verDetalle(){
       const modal=await this.modalCrtl.create({
-        component:DetalleComponent,
-        componentProps:{name}
+        component:DetalleHistoriaComponent,
+        
       });
 
       modal.present();

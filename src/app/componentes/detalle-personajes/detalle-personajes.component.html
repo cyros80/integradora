@@ -1,67 +1,61 @@
-/////////titulo////
-<ion-content>
-  <ion-label class="titulo">
-    <h1>{{personajes.nombre}}</h1>
-  </ion-label>
 
-  /////////Visualizacion de Datos////
+<ion-content id="contenido">
+  <ion-card >
+    <div class="img-wrapper">
+      <img class="imagen" [src]="personajes.imagen"/>
+      
+    </div>
+    <ion-card-content class="titulo">
+      {{personajes.nombre}}
+    </ion-card-content>
+    <ion-card-content class="info">
+      Informacion:
+    </ion-card-content>
+      <ion-row>
+        <ion-col>
+          <img   src="../../../assets/icon/genero.png" height="45px" alt="">
+        </ion-col>
+        <ion-col>
+          <ion-card-title>Genero: {{personajes.genero}}</ion-card-title>
+        </ion-col>
+      </ion-row>
+    
+      <ion-row>
+        <ion-col>
+          <img   src="../../../assets/icon/planetas.png" height="45px" alt="">
+        </ion-col>
+        <ion-col>
+          <ion-card-title>Planeta: {{personajes.planeta}}</ion-card-title>
+        </ion-col>
+      </ion-row>
+    
+      <ion-row>
+        <ion-col>
+          <img   src="../../../assets/icon/odio.png" height="45px" alt="">
+        </ion-col>
+        <ion-col>
+          <ion-card-title>Raza: {{personajes.raza}} </ion-card-title>
+        </ion-col>
+      </ion-row>
+  </ion-card>
 
-  <img class="imagen" [src]="personajes.imagen" >
-
-  <ion-grid>
+  <ion-card>
     <ion-row>
-      <ion-col size="4" class="detalle">
-        <ion-card class="poster">
-          <img [src]="personajes.imagen" class="poster" >
-        </ion-card>
-      </ion-col>
-
       <ion-col>
-        <ion-item>
-          <ion-label>Armas: </ion-label>
-          <img class="icono" alt="Velocidad" src="../../../assets/img/bomba.png">
-          <ion-note slot="end" color="primary">x10</ion-note>
-        </ion-item>
+        <img src="../../../assets/icon/descripcion.png" height="45px" alt="">
       </ion-col>
-
+     <ion-col>
+      <ion-card-title>Descripción:</ion-card-title>
+      
+     </ion-col>
     </ion-row>
-  </ion-grid> 
+    <ion-card-content class="descripcion">
+      {{personajes.descripcion}}
+    </ion-card-content>
+    
+  </ion-card>
 
-      <ion-card>
-        <ion-card-header>
-          <ion-card-subtitle>Descripción del personaje</ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content>
-          <p>{{personajes.descripcion}}</p>
-        </ion-card-content>
-      </ion-card>
-
-      <ion-card>
-        <ion-card-header>
-          <ion-card-subtitle>Estadisticas del personaje</ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-list>
-            <ion-item>
-              <img slot="start" class="icono" alt="salud" src="../../../assets/img/heart.png">
-              <ion-label>Salud</ion-label>
-              <ion-note slot="end" color="primary"> 6 </ion-note>
-            </ion-item>
-            <ion-item>
-              <img slot="start" class="icono" alt="salud" src="../../../assets/img/espada.png">
-              <ion-label>Daño</ion-label>
-              <ion-note slot="end" color="primary"> 3.2 </ion-note>
-            </ion-item>
-            <ion-item>
-              <img slot="start" class="icono" alt="salud" src="../../../assets/img/ejecutar.png">
-              <ion-label>Velocidad</ion-label>
-              <ion-note slot="end" color="primary"> 1.00 </ion-note>
-            </ion-item>
-          </ion-list>
-        </ion-card-content>
-      </ion-card>
-
-    </ion-content>
+  </ion-content>
 
   
   <ion-footer no-border>
@@ -77,3 +71,5 @@
     </ion-toolbar>
 
   </ion-footer>
+
+  

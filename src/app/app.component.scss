@@ -1,9 +1,39 @@
 ion-menu::part(backdrop) {
-    background-color: rgba(255, 0, 255, 0.5);
-  }
+  background-color: rgba(255, 0, 255, 0.5);
+}
+
+ion-menu::part(container) {
+  border-radius: 0 20px 20px 0;
+
+  box-shadow: 4px 0px 16px rgba(255, 0, 255, 0.18);
+}
+
+ion-label{
+  font-family: sans-serif;
+  font-size: 11px;
+  font-weight: 100;
+  color: #000000;
+}
+
+img{
+  margin-top: 3px;
+}
+
+ion-tab-bar{
   
-  ion-menu::part(container) {
-    border-radius: 0 20px 20px 0;
   
-    box-shadow: 4px 0px 16px rgba(255, 0, 255, 0.18);
-  }
+  background-color: #ffff;
+}
+
+ion-tabs{
+   --background: #ffff;
+}
+
+ion-tab-button{
+  margin-top: 5px;
+  --background: #ffff;
+}
+
+ion-app{
+  --background: #ffff;
+}

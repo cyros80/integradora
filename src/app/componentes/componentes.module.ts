@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DetalleComponent } from './detalle/detalle.component';
+import { DetalleHistoriaComponent } from './detalle-historia/detalle-historia.component';
+import { DetallePersonajesComponent } from './detalle-personajes/detalle-personajes.component';
+import { IonicModule } from '@ionic/angular';
 
 
 
 
 @NgModule({
-  declarations: [DetalleComponent],
+  declarations: [DetalleComponent,DetalleHistoriaComponent,DetallePersonajesComponent],
   imports: [
-    CommonModule
+    CommonModule,IonicModule
   ],
-  exports:[DetalleComponent]
+  exports:[DetalleComponent,DetalleHistoriaComponent,DetallePersonajesComponent]
 })
 export class ComponentesModule { }

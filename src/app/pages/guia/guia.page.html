@@ -1,0 +1,133 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Guia de Juego</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card-title class="tituloprincipal">Imagenes del Juego</ion-card-title>
+  <ion-slides [options]="opcionesSlide">
+    <ion-slide>
+      <img class="imagenslide" src="../../../assets/img/1.jpeg" >
+    </ion-slide>
+    <ion-slide>
+      <img class="imagenslide" src="../../../assets/img/2.jpeg" >
+    </ion-slide>
+    <ion-slide>
+      <img class="imagenslide" src="../../../assets/img/3.jpeg" >
+    </ion-slide>
+    <ion-slide>
+      <img class="imagenslide" src="../../../assets/img/4.jpeg" >
+    </ion-slide>
+    <ion-slide>
+      <img class="imagenslide" src="../../../assets/img/5.jpeg" >
+    </ion-slide>
+  </ion-slides>
+  <ion-card class="card">
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">Movimiento</ion-card-title>
+      <ion-grid>
+        <ion-row>
+          <ion-col><ion-card-title class="titulo">Teclas</ion-card-title></ion-col>
+          <ion-col><img src="../../../assets/tecla/awsd.png" height="60px"></ion-col>
+          <ion-col><img src="../../../assets/tecla/mi.png" height="45px"></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col><ion-card-title>Saltar</ion-card-title></ion-col>
+          <ion-col><img class="imagen" src="../../../assets/tecla/w.png" height="30px"></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col><ion-card-title>Moverse</ion-card-title></ion-col>
+          <ion-col><img class="imagen1" src="../../../assets/tecla/a.png" height="30px"></ion-col>
+          <ion-col><img class="imagen2" src="../../../assets/tecla/d.png" height="30px"></ion-col>
+        </ion-row>
+    
+        <ion-row>
+          <ion-col><ion-card-title>Abajo</ion-card-title></ion-col>
+          <ion-col><img class="imagen" src="../../../assets/tecla/s.png" height="30px"></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col><ion-card-title>Atacar</ion-card-title></ion-col>
+          <ion-col><img class="imagen" src="../../../assets/tecla/e.png" height="30px"></ion-col>
+        </ion-row>
+      </ion-grid>
+      
+      
+      
+    </ion-card-header>
+  
+  </ion-card>
+  <ion-card class="card3">
+    <ion-card-header>
+      <ion-card-title class="titulop">Personajes</ion-card-title>
+      <ion-grid>
+        <ion-row>
+          <ion-col><ion-card-title class="titulo3">Pancho</ion-card-title></ion-col>
+          <ion-col><img src="../../../assets/personajes/pancho.png" height="80px"></ion-col>
+          <ion-col>
+            <p>
+              Es el héroe de nuestra Historia
+            </p>
+          </ion-col>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col><ion-card-title class="titulo3">Rey Kang</ion-card-title></ion-col>
+          <ion-col><img  src="../../../assets/personajes/rey.png" height="80px"></ion-col>
+          <ion-col>
+            <p>
+              Es el nuestro enemigo principal, tenemos que vencerlo para poder ganar.
+            </p>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col><ion-card-title class="titulo3">Guerreros</ion-card-title></ion-col>
+          <ion-col><img  src="../../../assets/personajes/sub.png" height="80px"></ion-col>
+          <ion-col>
+            <p>
+              Son los Guerreros encargados del Rey que vienen a complicar las cosas.
+            </p>
+          </ion-col>
+        </ion-row>
+        
+        
+      </ion-grid>
+      
+      
+      
+    </ion-card-header>
+  
+  </ion-card>
+  <ion-card class="card2">
+    <ion-card-header>
+      <ion-card-title class="titulo2">Coleccionables</ion-card-title>
+      <ion-grid>
+        <ion-row>
+          <ion-col><ion-card-title class="tituloes">Estrella</ion-card-title></ion-col>
+          <ion-col><img src="../../../assets/secretos/estrella.png" height="50px"></ion-col>
+          <ion-col>
+            <p class="especial">
+              Es un coleccionable común, está por todos lados.  
+            </p>
+          </ion-col>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col><ion-card-title class="titulohue">Huesos</ion-card-title></ion-col>
+          <ion-col><img  src="../../../assets/secretos/hueso.png" height="90px"></ion-col>
+          <ion-col>
+            <p class="especial">
+              Este es un coleccionable especial, difícil de encontrar.
+            </p>
+          </ion-col>
+        </ion-row>
+        
+      </ion-grid>
+      
+      
+      
+    </ion-card-header>
+  
+  </ion-card>
+</ion-content>

@@ -1,0 +1,39 @@
+ion-content{
+  --background:url("../../../assets/icon/fondo.png")
+}
+
+ion-title{
+  color: #ffff;
+  font-family: serif;
+  font-weight: 200;
+  font-size: 30px;
+  font-style: oblique;
+
+}
+
+.titulo{
+  color: #ffff;
+  font-family: serif;
+  font-weight: 200;
+  font-size: 30px;
+  font-style: oblique;
+  text-align: center;
+
+}
+
+ion-card{
+  --background: rgba(255, 255, 255, 0.732);
+}
+
+p{
+  font-family: Georgia, serif;
+  font-size: 18px;
+  text-justify: auto;
+  color: #4d4d4d;
+}
+
+ion-toolbar{
+
+  --background:#c5cae9;
+
+}

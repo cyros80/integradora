@@ -19,13 +19,18 @@ const routes: Routes = [
     path: 'secretos',
     loadChildren: () => import('./pages/secretos/secretos.module').then( m => m.SecretosPageModule)
   },
-  {
-    path: 'enemigos',
-    loadChildren: () => import('./pages/enemigos/enemigos.module').then( m => m.EnemigosPageModule)
-  },
+  
   {
     path: 'personajes',
     loadChildren: () => import('./pages/personajes/personajes.module').then( m => m.PersonajesPageModule)
+  },
+  {
+    path: 'guia',
+    loadChildren: () => import('./pages/guia/guia.module').then( m => m.GuiaPageModule)
+  },
+  {
+    path: 'creadores',
+    loadChildren: () => import('./pages/creadores/creadores.module').then( m => m.CreadoresPageModule)
   },
 ];
 
